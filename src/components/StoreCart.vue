@@ -1,5 +1,5 @@
 <template>
-    <div style="padding: 20px;">
+    <div class="main-block">
         <a-list item-layout="horizontal" :data-source="cart">
             <a-list-item slot="renderItem" slot-scope="{productName, GroupName, productId, groupId }, productIndex">
                 <a-list-item-meta>
@@ -8,8 +8,8 @@
                 <a-tag slot="actions" color="orange">
                     {{ GroupName }}
                 </a-tag>
-                <a-input-number slot="actions" style="width: 60px;" v-model="cart[productIndex].quantity" />
-                <a-tag slot="actions" style="width: 70px;text-align: center;" :color="courseColor">₽ {{
+                <a-input-number slot="actions" v-model="cart[productIndex].quantity" />
+                <a-tag slot="actions" class="price-tag" :color="courseColor">₽ {{
                     getStateData[groupId].products[productId]['priceRUB'] }}</a-tag>
                 <a-button slot="actions" type="danger" icon="delete" @click="removeFromCart({ productId, groupId })" />
             </a-list-item>

@@ -2,13 +2,13 @@
   <div id="app"> <!--shapkakepka-->
     <a-row>
       <a-col :span="12">
-        <div style="margin: 20px;text-align: center;">
+        <div class="currency-course-tab">
           Курс: <a-input prefix="₽" @blur="updateCourse" :value="course" style="width: 100px;" />
         </div>
         <StoreCatalog />
       </a-col>
       <a-col :span="12">
-        <div style="align-items: center;padding: 20px;display: flex;justify-content: center;">
+        <div class="interval-reload-tab">
           <a-statistic-countdown title="Обновление через:" :value="deadline" format="ss" @finish="onFinish" />
           <a-button style="margin-left: 10px;" shape="circle" icon="sync" @click="onFinish" />
         </div>
@@ -61,5 +61,26 @@ export default {
 
 .ant-statistic-title {
   padding-right: 10px;
+}
+
+.interval-reload-tab {
+  align-items: center;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.currency-course-tab {
+  margin: 20px;
+  text-align: center;
+}
+
+.main-block {
+  padding: 20px;
+}
+
+.price-tag {
+  width: 70px;
+  text-align: center;
 }
 </style>
